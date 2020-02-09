@@ -12,6 +12,7 @@ using WMS.Web.Filter;
 namespace Web.WMS.Controllers.Box
 {
     [RoleActionFilter(Message = "Basic/Box")]
+
     public class BoxController :   BaseController<T_BoxInfo>
     {
         private IBoxService boxService;
