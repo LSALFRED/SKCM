@@ -44,6 +44,10 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
+    <Reference Include="MySql.Data, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.0.8.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -91,6 +95,8 @@
     <Compile Include="Basing\Factory\Func.cs" />
     <Compile Include="Basing\Factory\IBaseDB.cs" />
     <Compile Include="Basing\Factory\IDBFactory.cs" />
+    <Compile Include="Basing\Factory\MySqlBase_DB.cs" />
+    <Compile Include="Basing\Factory\MySqlFactory.cs" />
     <Compile Include="Basing\Factory\OracleBase_DB.cs" />
     <Compile Include="Basing\Factory\OracleFactory.cs" />
     <Compile Include="Basing\Factory\SqlServerBase_DB.cs" />
@@ -116,6 +122,7 @@
     <Folder Include="SystemSet\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DLL\MySql.Data.dll" />
     <Content Include="DLL\Oracle.DataAccess.dll" />
     <Content Include="DLL\Oracle.ManagedDataAccess.dll" />
     <Content Include="log4net.xml" />

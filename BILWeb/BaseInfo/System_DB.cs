@@ -18,7 +18,7 @@ namespace BILWeb.BaseInfo
 {
     public partial class T_System_DB
     {
-        public DbFactory dbFactory = new DbFactory(DbFactory.DbFactoryType.SQLSERVER);
+        public DbFactory dbFactory = new DbFactory(DbFactory.DbFactoryType.MYSQL);
         private int GetID()
         {
             object id = dbFactory.ExecuteScalar(System.Data.CommandType.Text, "SELECT MAX(ID) FROM T_System");

@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace BILBasic.Basing
 {
@@ -24,6 +25,7 @@ namespace BILBasic.Basing
         {
            SQLSERVER = 0,
             ROACLE = 1,
+            MYSQL = 2
         }
 
 
@@ -52,7 +54,7 @@ namespace BILBasic.Basing
 
 
                     };// 数据库连接字符
-                    SqlConnection connection = (SqlConnection)dbF.CreateConnection();
+                    //SqlConnection connection = (SqlConnection)dbF.CreateConnection();
                     //SqlBulkCopy
                     //connection.BulkCopy
                     break;
@@ -61,6 +63,15 @@ namespace BILBasic.Basing
                     {
                         ConnStr = ConnectionStringLocalTransaction
                     };
+                    break;
+                case DbFactoryType.MYSQL:
+                    dbF = new MySqlFactory
+                    {
+                        ConnStr = ConnectionStringLocalTransaction
+                    };
+
+                    MySqlConnection connection = (MySqlConnection)dbF.CreateConnection();
+
                     break;
             }
         }

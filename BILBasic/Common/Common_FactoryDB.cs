@@ -12,7 +12,7 @@ namespace BILBasic.Common
 {
     public class Common_FactoryDB
     {
-        DbFactory dbFactory = new DbFactory(DbFactory.DbFactoryType.SQLSERVER);
+        DbFactory dbFactory = new DbFactory(DbFactory.DbFactoryType.MYSQL);
             /// <summary>
             /// 分页查询
             /// </summary>

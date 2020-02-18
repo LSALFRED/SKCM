@@ -16,7 +16,7 @@ namespace BILBasic.Common
 {
     public class Common_Func
     {
-        public static DbFactory dbFactory = new DbFactory(DbFactory.DbFactoryType.SQLSERVER);
+        public static DbFactory dbFactory = new DbFactory(DbFactory.DbFactoryType.MYSQL);
 
         private static Dictionary<string, string> _comboBoxSql = new Dictionary<string, string> 
         {

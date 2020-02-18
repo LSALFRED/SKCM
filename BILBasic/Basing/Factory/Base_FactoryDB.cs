@@ -13,7 +13,7 @@ namespace BILBasic.Basing.Factory
     public abstract class Base_DB<TBase_Model> where TBase_Model : Base_Model
     {
       //  public static  IDBFactory dbFactory.dbF;
-        public  static  DbFactory dbFactory = new DbFactory(DbFactory.DbFactoryType.SQLSERVER);
+        public  static  DbFactory dbFactory = new DbFactory(DbFactory.DbFactoryType.MYSQL);
         protected DateTime start_date = new DateTime(2000, 1, 1);
         Common.Common_FactoryDB common_FactoryDB = new Common_FactoryDB();
             public virtual TBase_Model GetModelByID(int ID)

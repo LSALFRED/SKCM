@@ -279,8 +279,8 @@ namespace BILWeb.Login.User
 
         protected override string GetModelSql(UserInfo model)
         {
-            return string.Format("SELECT GETDATE() CurrentTime,V_User.* FROM V_User WHERE UserNo = '{0}' AND Password = '{1}' ", model.UserNo, model.PassWord);
-            
+            return string.Format("SELECT sysdate() as CurrentTime,V_User.* FROM V_User WHERE UserNo = '{0}' AND Password = '{1}' ", model.UserNo, model.PassWord);
+
         }
 
         public int GetScalarBySql(UserInfo user)

@@ -145,12 +145,12 @@ namespace BILWeb.Login.User
                     user.lstMenu = lstMenuParent;         
                 }
 
-                T_WareHouse_Func twfun = new T_WareHouse_Func();
-                List<T_WareHouseInfo> lstWarehouse = new List<T_WareHouseInfo>();
-                if (twfun.GetModelListBySql(user, ref lstWarehouse)) 
-                {
-                    user.lstWarehouse = lstWarehouse;
-                }
+                //T_WareHouse_Func twfun = new T_WareHouse_Func();
+                //List<T_WareHouseInfo> lstWarehouse = new List<T_WareHouseInfo>();
+                //if (twfun.GetModelListBySql(user, ref lstWarehouse)) 
+                //{
+                //    user.lstWarehouse = lstWarehouse;
+                //}
 
                 return true;
                 

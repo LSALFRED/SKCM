@@ -1,57 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Data;
+using MySql.Data.MySqlClient;
 
 namespace BILBasic.Basing
 {
-
-    /// <summary>
-    /// sqlserver
-    /// </summary>
-   public class SqlServerFactory : IDBFactory
+    public class MySqlBase_DB : IBaseDB
     {
-        public string ConnStr { get; set; }
-
-        public IDbConnection CreateConnection()
-        {
-
-            return new SqlConnection(ConnStr);
-        }
-
-        public IDbConnection CreateConnection(string strConn)
-        {
-            return new SqlConnection(strConn);
-        }
-
-        public IDbCommand CreateCommand()
-        {
-            return new SqlCommand();
-        }
-
-        public IDbDataAdapter CreateDataAdapter()
-        {
-            return new SqlDataAdapter();
-        }
-
-        public IDbTransaction CreateTransaction(IDbConnection sqlConn)
-        {
-            return sqlConn.BeginTransaction();
-        }
-
+        private IDbDataParameter[] _idbParameters;
         public IDataReader CreateDataReader(IDbCommand sqlComm)
         {
             return sqlComm.ExecuteReader();
         }
 
-        private IDbDataParameter[] _idbParameters;
+        public IDataReader dataReader()
+        {
+            throw new NotImplementedException();
+        }
+
         public IDBFactory dBFactory()
         {
-            IDBFactory dBFactory = new SqlServerFactory();
+            IDBFactory dBFactory = new MySqlFactory();
             dBFactory.ConnStr = "";
             return dBFactory;
         }
@@ -61,7 +33,7 @@ namespace BILBasic.Basing
             IDbDataParameter[] idbParams = new IDbDataParameter[paramsCount];
             for (int i = 0; i < paramsCount; i++)
             {
-                idbParams[i] = new SqlParameter();
+                idbParams[i] = new MySqlParameter();
             }
             return idbParams;
         }

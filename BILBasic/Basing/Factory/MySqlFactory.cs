@@ -1,41 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace BILBasic.Basing
 {
-
-    /// <summary>
-    /// sqlserver
-    /// </summary>
-   public class SqlServerFactory : IDBFactory
+    public class MySqlFactory : IDBFactory
     {
         public string ConnStr { get; set; }
 
         public IDbConnection CreateConnection()
         {
 
-            return new SqlConnection(ConnStr);
+            return new MySqlConnection(ConnStr);
         }
 
         public IDbConnection CreateConnection(string strConn)
         {
-            return new SqlConnection(strConn);
+            return new MySqlConnection(strConn);
         }
 
         public IDbCommand CreateCommand()
         {
-            return new SqlCommand();
+            return new MySqlCommand();
         }
 
         public IDbDataAdapter CreateDataAdapter()
         {
-            return new SqlDataAdapter();
+            return new MySqlDataAdapter();
         }
 
         public IDbTransaction CreateTransaction(IDbConnection sqlConn)
@@ -51,7 +46,7 @@ namespace BILBasic.Basing
         private IDbDataParameter[] _idbParameters;
         public IDBFactory dBFactory()
         {
-            IDBFactory dBFactory = new SqlServerFactory();
+            IDBFactory dBFactory = new MySqlFactory();
             dBFactory.ConnStr = "";
             return dBFactory;
         }
@@ -61,7 +56,7 @@ namespace BILBasic.Basing
             IDbDataParameter[] idbParams = new IDbDataParameter[paramsCount];
             for (int i = 0; i < paramsCount; i++)
             {
-                idbParams[i] = new SqlParameter();
+                idbParams[i] = new MySqlParameter();
             }
             return idbParams;
         }
@@ -100,6 +95,5 @@ namespace BILBasic.Basing
             Parameters = new IDbDataParameter[paramsCount];
             Parameters = dbParameter(paramsCount);
         }
-
     }
 }
