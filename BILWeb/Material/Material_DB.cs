@@ -20,7 +20,7 @@ namespace BILWeb.Material
         protected override IDataParameter[] GetSaveModelIDataParameter(T_MaterialInfo t_material)
         {
             //注意!head表ID要填basemodel的headerID new SqlParameter("@CustomerID", DbHelperSQL.ToDBValue(model.HeaderID)),
-            throw new NotImplementedException();
+            throw new NotImplementedException(); 
         }
 
         protected override List<string> GetSaveSql(UserModel user,ref  T_MaterialInfo model)
